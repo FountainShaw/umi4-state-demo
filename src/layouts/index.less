@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navs {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  ul {
+    padding: 1em;
+    list-style: none;
+    display: flex;
+  }
+
+  .nav-li {
+    margin-right: 1em;
+    border-radius: 15%;
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 3px;
+
+    a {
+      width: 80px;
+      line-height: 2.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #333;
+    }
+  }
+
+  .nav-li--active {
+    .nav-li;
+
+    background-color: #5b59f0;
+
+    a {
+      text-decoration: none;
+      color: white;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  .todo-app {
+    font-family: sans-serif;
+  }
+
+  .container {
+    position: relative;
+    padding: 8px;
+
+    &--modal {
+      position: absolute;
+      margin: auto;
+      top: 50px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      background-color: #d5d0d04a;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 0.8em;
+    }
+  }
+
+  /** add todo **/
+  .add-todo {
+    margin-left: 0.5rem;
+    border-color: transparent;
+    background: #ddd;
+    color: #333;
+    border-radius: 4px;
+  }
+
+  /** todo list **/
+  .todo-list {
+    text-align: left;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    overflow-y: scroll;
+
+    li:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    li:nth-child(even) {
+      background-color: #fff;
+    }
+  }
+
+  /** todo item **/
+  .todo-item {
+    font-family: monospace;
+    cursor: pointer;
+    line-height: 2.5;
+  }
+  .todo-item__text--completed {
+    text-decoration: line-through;
+    color: green;
+  }
+
+  /** visibility filters **/
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .filter {
+    padding: 0.3rem 0;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+  }
+
+  .filter--active {
+    .filter;
+
+    color: #5b59f0;
+    border-bottom: 1px solid #5b59f0;
+  }
+}
