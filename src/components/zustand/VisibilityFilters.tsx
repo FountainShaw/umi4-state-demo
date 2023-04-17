@@ -1,9 +1,10 @@
 import { useTodo } from '../../models/zustandTodo';
 import { VISIBILITY_FILTERS_OPTS } from "../../common/constants";
 import styles from '../../layouts/index.less';
+import { shallow } from 'zustand/shallow'
 
 export default function VisibilityFilters() {
-  const [activeFilter, filterTodos] = useTodo(({ activeFilter, filterTodos }) => [activeFilter, filterTodos]);
+  const [activeFilter, filterTodos] = useTodo(({ activeFilter, filterTodos }) => [activeFilter, filterTodos], shallow);
 
   return (
     <div className={styles['filters']}>
